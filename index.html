@@ -11,16 +11,24 @@
 
 <body>
     <header>
-        <h1 id="logo">WATERISE</h1>
+        <a href="./index.html" id="logo">
+            <img src="./src/assets/img/logo transparente.png" alt="Logo Waterise" />
+        </a>
         <nav>
             <ul>
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./pages/sobre.html">Sobre</a></li>
                 <li><a href="./pages/quiz.html">Quiz</a></li>
-                <li><a href="./pages/carros.html">Contato</a></li>
+                <li><a href="./pages/login.html">Login/Cadastro</a></li>
             </ul>
         </nav>
     </header>
+
+    <div class="color-buttons">
+        <button onclick="mudarCor('branco')">Branco</button>
+        <button onclick="mudarCor('azul')">Azul</button>
+        <button onclick="mudarCor('cinza')">Cinza</button>
+    </div>
 
     <section class="banner">
         <img id="image" alt="Imagem" />
@@ -28,6 +36,88 @@
             <h2>ASCENÇÃO <span>SOB CONTROLE</span></h2>
         </div>
     </section>
+
+    <main>
+
+  <section id="problema">
+    <div class="container">
+      <div class="text">
+        <h2>O Problema</h2>
+        <p>Enchentes são um problema recorrente no Brasil, causando riscos à vida, impactos ambientais severos, danos à infraestrutura e prejuízos econômicos.</p>
+        <p>A grande maioria das pessoas que passam por isso, não tem seguro e muito menos condições para reconstruir suas vidas.</p>
+      </div>
+      <div class="image">
+        <img src="./src/assets/img/enchente horizontal 5.jpg" alt="Problemas com enchentes" />
+      </div>
+    </div>
+  </section>
+
+  <section id="tecnologias">
+    <div class="container">
+      <div class="text">
+        <h2>Tecnologias</h2>
+        <p>Utilizamos sensores de distância para medir a altura da água, APIs meteorológicas e alertas sonoros e visuais em tempo real.</p>
+        <p>Frontend com HTML, CSS, JavaScript puro, para um site responsivo e informativo. Backend fictício para simulação de alertas e dados.</p>
+      </div>
+      <div class="image">
+        <img src="./src/assets/img/simulaçõ.png" alt="Tecnologias utilizadas" />
+      </div>
+    </div>
+  </section>
+
+  <section id="objetivos">
+    <div class="container">
+      <div class="text">
+        <h2>Objetivos</h2>
+        <p>A <span>WATERISE</span> visa minimizar os riscos causados por enchentes através de monitoramento e conscientização por meio de um quiz interativo.</p>
+        <p>Como empresa, presamos pela melhor qualidade em nossos projetos, porém mantendo a praticidade, com eficiência.</p>
+      </div>
+      <div class="image">
+        <img src="./src/assets/img/enchente horizontal 2.jpg" alt="Objetivos do projeto" />
+      </div>
+    </div>
+  </section>
+
+  <section id="publico">
+    <div class="container">
+      <div class="text">
+        <h2>Público-Alvo</h2>
+        <p>Moradores de regiões sob risco e famílias de baixa renda.</p>
+        <p>Órgãos públicos e projetos sociais também podem ser beneficiados com dados e informações acessíveis.</p>
+      </div>
+      <div class="image">
+        <img src="./src/assets/img/enchente horizontal 6.jpg" alt="Público-alvo do projeto" />
+      </div>
+    </div>
+  </section>
+
+  <section id="beneficios">
+    <div class="container">
+      <div class="text">
+        <h2>Benefícios</h2>
+        <p>Alertas antecipados reduzem danos e salvam vidas em situações emergenciais e repentinas.</p>
+      </div>
+      <div class="image">
+        <img src="./src/assets/img/enchente horizontal.jpg" alt="Benefícios da solução" />
+      </div>
+    </div>
+  </section>
+
+  <section id="como-ajuda">
+    <div class="container">
+      <div class="text">
+        <h2>Como Ajudamos</h2>
+        <p>Usuários recebem alertas automáticos, aprendem no quiz e visualizam situações com o slideshow.</p>
+        <p>Plataforma intuitiva e responsiva acessível de qualquer dispositivo.</p>
+      </div>
+      <div class="image">
+        <img src="./src/assets/img/enchente horizontal 3.jpg" alt="Como o projeto ajuda" />
+      </div>
+    </div>
+  </section>
+
+</main>
+
 
     <footer class="footer">
         <div class="footer-content">

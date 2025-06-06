@@ -25,3 +25,27 @@ function slideShow() {
 
 // Iniciar slideshow quando o conteúdo estiver carregado
 window.addEventListener('load', slideShow);
+
+function mudarCor(tema) {
+  const body = document.body;
+  const root = document.documentElement;
+
+  switch (tema) {
+    case 'branco':
+      body.style.backgroundColor = '#FFFFFFFF';
+      break;
+    case 'azul':
+      body.style.backgroundColor = '#aac1df';
+      break;
+    case 'cinza':
+      body.style.backgroundColor = '#878787FF';
+      break;
+  }
+}
+
+// ===============================
+// INICIAR SCRIPT QUANDO A PÁGINA CARREGAR
+// ===============================
+window.addEventListener('load', () => {
+  slideShow();
+});
