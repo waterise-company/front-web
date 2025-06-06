@@ -23,8 +23,7 @@ function slideShow() {
   setTimeout(slideShow, tempo);
 }
 
-// Iniciar slideshow quando o conteúdo estiver carregado
-window.addEventListener('load', slideShow);
+
 
 function mudarCor(tema) {
   const body = document.body;

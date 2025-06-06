@@ -263,3 +263,12 @@ main section .image img {
   height: auto;
   border-radius: var(--border-radius);
 }
+
+.footer {
+    background-color: var(--color-font3); /* azul escuro */
+    color: var(--color-font1);            /* branco */
+    padding: 2rem;
+    text-align: center;
+    font-family: var(--fonte-principal);
+    font-size: 1.4rem;
+}
