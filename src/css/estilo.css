@@ -491,3 +491,18 @@ main section .image img {
   border-radius: var(--border-radius);
   display: inline-block;
 }
+
+#indicador-pagina {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.041);
+  color: rgb(255, 255, 255);
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-family: var(--fonte-principal);
+  font-size: 1.6rem;
+  z-index: 9999;
+  user-select: none;
+}
