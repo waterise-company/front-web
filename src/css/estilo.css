@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* reset básico */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* variáveis CSS */
+:root{
+    --fonte-principal: "Nunito", sans-serif;
+    --color-font1: #F5F5F5;
+    --color-font2: #7789a8;
+    --color-font3: #051838;
+    --color-font4: #0A0A0A;
+    --color-font5: #aac1df;
+    --gradient: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+    --border-radius: 20px;
+    --font-size: 1rem;
+}
+
+html{
+    /* ajusta a base da fonte para 10px */
+    font-size: 62.5%;
+    /* efeito de suavidade ao fazer scroll */
+    scroll-behavior: smooth;
+}
+
+body{
+    background: transparent;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+nav ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    font-family: var(--fonte-principal);
+    color: var(--color-font2);
+    font-weight: 900;
+    transition: color .3s;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+a:hover{
+    font-family: var(--fonte-principal);
+    color: var(--color-font3);
+}
+
+
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    padding: 3rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--color-font1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 1000;
+ 
+}
+
+header nav ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: var(--color-font1);
+    font-weight: 850;
+    font-family: var(--fonte-principal);
+}
+
+header nav ul li a:hover{
+    color: var(--color-font5);
+    text-decoration: none;
+    font-family: var(--fonte-principal);
+    
+}
+
+header #logo{
+    font-family: var(--fonte-principal);
+    color: var(--color-font1);
+    font-size: 2.5rem;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.banner #image{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1; 
+}
+
+.banner-text {
+    font-family: var(--fonte-principal);
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.banner-text span {
+    font-family: var(--fonte-principal);
+    font-weight: 850;
+    color: var(--color-font2);
+}
+
+.banner-text h2 {
+    font-family: var(--fonte-principal);
+    font-weight: 850;
+    color: white;
+}
+
+#titulo{
+    display: flex;
+    justify-content: center;
+    font-size: 4rem;
+    font-family: var(--fonte-principal);
+}
+
