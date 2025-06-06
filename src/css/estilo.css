@@ -390,6 +390,7 @@ main section .image img {
     text-align: center;
     font-family: var(--fonte-principal);
     font-size: 1.4rem;
+    margin-top: 25rem;
 }
 
 
