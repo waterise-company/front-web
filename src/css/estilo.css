@@ -90,13 +90,13 @@ header nav ul{
 
 header nav ul li a{
     text-decoration: none;
-    color: var(--color-font1);
+    color: var(--color-font2);
     font-weight: 850;
     font-family: var(--fonte-principal);
 }
 
 header nav ul li a:hover{
-    color: var(--color-font5);
+    color: var(--color-font3);
     text-decoration: none;
     font-family: var(--fonte-principal);
     
@@ -387,4 +387,103 @@ main section .image img {
     text-align: center;
     font-family: var(--fonte-principal);
     font-size: 1.4rem;
+}
+
+
+.quiz-container {
+  max-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 8rem auto 4rem;
+  background-color: var(--color-font1);
+  padding: 2.5rem 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  font-family: var(--fonte-principal);
+  color: var(--color-font4);
+}
+
+#quiz-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-font3);
+}
+
+#startBtn {
+  background-color: var(--color-font3); 
+  font-family: var(--fonte-principal);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#startBtn:hover {
+  background-color: var(--color-font2); 
+}
+
+
+.question p {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.question label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.question label:hover {
+  background-color: var(--color-font5);
+  color: var(--color-font1);
+}
+
+.question input[type="radio"] {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.question button {
+  margin-top: 2rem;
+  padding: 0.8rem 2.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background-color: var(--color-font3);
+  color: var(--color-font1);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.question button:hover {
+  background-color: var(--color-font5);
+  color: var(--color-font3);
+}
+
+#resultado {
+  margin-top: 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-font3);
+}
+
+#resultado img {
+  margin-top: 1.5rem;
+  max-width: 250px;
+  height: auto;
+  border-radius: var(--border-radius);
+  display: inline-block;
 }

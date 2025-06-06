@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CHAMANDO O CSS EXTERNO -->
-    <link rel="stylesheet" href="./src/css/estilo.css">
-    <title>Início</title>
+    <link rel="stylesheet" href="/src/css/estilo.css">
+    <title>Quiz</title>
 </head>
 
 <body>
     <header>
         <a href="../../index.html" id="logo">
-          <img src="./src/assets/img/logo transparente.png" alt="Logo Waterise" />
+          <img src="/src/assets/img/logo transparente.png" alt="Logo Waterise" />
         </a>
         <nav>
           <ul class="header-menu">
             <li><a href="../../index.html">Home</a></li>
-            <li><a href="./src/pages/quiz.html">Quiz</a></li>
-            <li><a href="./src/pages/login.html">Login/Cadastro</a></li>
-            <li><a href="./src/pages/simulador.html">Simulador</a></li>
+            <li><a href="./quiz.html">Quiz</a></li>
+            <li><a href="./login.html">Login/Cadastro</a></li>
+            <li><a href="./simulador.html">Simulador</a></li>
           </ul>
         </nav>
           <div class="hamburguer">
@@ -45,6 +45,136 @@
         <div id="resultado"></div>
     </div>
 
+<script>
+const perguntas = [
+  {
+    texto: "Você sabe se sua região corre risco de enchentes?",
+    opcoes: [
+      { texto: "Sim, conheço bem os riscos.", valor: 4 },
+      { texto: "Tenho uma ideia, mas não sei detalhes.", valor: 3 },
+      { texto: "Acho que não tem risco.", valor: 2 },
+      { texto: "Nunca pensei nisso.", valor: 1 },
+    ]
+  },
+  {
+    texto: "Você sabe o que fazer durante uma enchente?",
+    opcoes: [
+      { texto: "Sim, tenho um plano de emergência.", valor: 4 },
+      { texto: "Tenho uma noção do que fazer.", valor: 3 },
+      { texto: "Acho que tentaria sair de casa.", valor: 2 },
+      { texto: "Não sei o que fazer.", valor: 1 },
+    ]
+  },
+  {
+    texto: "Você já recebeu alertas de enchente?",
+    opcoes: [
+      { texto: "Sim, recebo sempre e levo a sério.", valor: 4 },
+      { texto: "Já recebi alguns.", valor: 3 },
+      { texto: "Nunca recebi.", valor: 2 },
+      { texto: "Nem sabia que existiam alertas.", valor: 1 },
+    ]
+  },
+  {
+    texto: "Sua casa tem alguma proteção contra enchentes?",
+    opcoes: [
+      { texto: "Sim, tenho barreiras ou canaletas.", valor: 4 },
+      { texto: "Tenho ralos com válvulas de retenção.", valor: 3 },
+      { texto: "Não tenho nada específico.", valor: 2 },
+      { texto: "Não sei dizer.", valor: 1 },
+    ]
+  },
+  {
+    texto: "Você separaria documentos importantes em caso de evacuação?",
+    opcoes: [
+      { texto: "Sim, já deixo tudo em local seguro.", valor: 4 },
+      { texto: "Se tiver tempo, sim.", valor: 3 },
+      { texto: "Provavelmente esqueceria.", valor: 2 },
+      { texto: "Nunca pensei nisso.", valor: 1 },
+    ]
+  }
+];
+
+const startBtn = document.getElementById('startBtn');
+const startContainer = document.getElementById('start-container');
+const quizForm = document.getElementById('quizForm');
+const resultadoDiv = document.getElementById('resultado');
+
+let perguntaAtual = 0;
+let score = 0;
+
+startBtn.addEventListener('click', () => {
+  startContainer.style.display = 'none';
+  quizForm.style.display = 'block';
+  mostrarPergunta();
+});
+
+function mostrarPergunta() {
+  quizForm.innerHTML = '';
+  const pergunta = perguntas[perguntaAtual];
+
+  const div = document.createElement('div');
+  div.className = 'question';
+
+  const p = document.createElement('p');
+  p.textContent = `${perguntaAtual + 1}. ${pergunta.texto}`;
+  div.appendChild(p);
+
+  pergunta.opcoes.forEach(opcao => {
+    const label = document.createElement('label');
+    label.innerHTML = `
+      <input type="radio" name="resposta" value="${opcao.valor}" required />
+      ${opcao.texto}
+    `;
+    div.appendChild(label);
+  });
+
+  const botao = document.createElement('button');
+  botao.textContent = perguntaAtual < perguntas.length - 1 ? 'Próxima Pergunta' : 'Ver Resultado';
+  botao.type = 'button';
+  botao.addEventListener('click', proximaPergunta);
+  div.appendChild(botao);
+
+  quizForm.appendChild(div);
+}
+
+function proximaPergunta() {
+  const selecionado = document.querySelector('input[name="resposta"]:checked');
+  if (!selecionado) {
+    alert('Por favor, selecione uma resposta.');
+    return;
+  }
+
+  score += Number(selecionado.value);
+  perguntaAtual++;
+
+  if (perguntaAtual < perguntas.length) {
+    mostrarPergunta();
+  } else {
+    mostrarResultado();
+  }
+}
+
+function mostrarResultado() {
+  quizForm.style.display = 'none';
+
+  let mensagem = '';
+  let imagem = '';
+
+  if (score >= 18) {
+    mensagem = '🎉 Parabéns! Você está bem preparado(a) para situações de enchente. Continue se informando e ajudando a conscientizar outras pessoas.';
+    imagem = '<img src="../assets/img/preparado.png" alt="Preparado" style="max-width:100%; height:auto; margin-top:15px;">';
+  } else if (score >= 12) {
+    mensagem = '⚠️ Você tem algum conhecimento, mas ainda pode melhorar. A prevenção é essencial! Que tal revisar o plano de emergência da sua cidade?';
+    imagem = '<img src="../assets/img/parcial.png" alt="Precisa melhorar" style="max-width:100%; height:auto; margin-top:15px;">';
+  } else {
+    mensagem = '🚨 Atenção! Seu nível de preparo para enchentes é baixo. Busque informações e esteja pronto para agir em caso de emergência.';
+    imagem = '<img src="../assets/img/alerta.png" alt="Baixa preparação" style="max-width:100%; height:auto; margin-top:15px;">';
+  }
+
+  resultadoDiv.innerHTML = mensagem + imagem;
+}
+</script>
+
 
     <footer class="footer">
         <div class="footer-content">
@@ -55,7 +185,7 @@
 
 
     <!-- CHAMANDO O SCRIPT EXTERNO -->
-    <script src="./src/js/script.js"></script>
+    <script src="/src/js/script.js"></script>
 </body>
 
 </html>
