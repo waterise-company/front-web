@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="cadastro-usuario">
+    <header>
+            <a href="../../index.html" id="logo">
+                <img src="../assets/img/logo_transparente.png" alt="Logo Waterise" />
+            </a>
+            <nav>
+                <ul class="header-menu">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="./simulador.html">Simulação</a></li>
+                </ul>
+            </nav>
+            <div class="hamburguer">
+                <span class="barra"></span>
+                <span class="barra"></span>
+                <span class="barra"></span>
+            </div>
+        </header>
+    <div class="container-login">
+        <h2>Cadastro de Usuário</h2>
+        <form id="cadastroForm">
+            <div id="mensagem-erro" style="color: red; margin-bottom: 10px;"></div>
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <label for="confirmar-senha">Confirmar Senha</label>
+            <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+            
+            <div class="login-link">
+                <p>Já possui uma conta? <a class="faca-login" href="login.html">Faça login</a></p>
+            </div>
+            <div class="login-link">
+                <button type="submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>

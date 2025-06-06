@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login do Usuário</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+     <header>
+            <a href="../../index.html" id="logo">
+                <img src="../assets/img/logo_transparente.png" alt="Logo Waterise"/>
+            </a>
+            <nav>
+                <ul class="header-menu">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="./cadastrar.html">Cadastrar-se</a></li>
+                    <li><a href="./simulador.html">Simulação</a></li>
+                </ul>
+            </nav>
+            <div class="hamburguer">
+                <span class="barra"></span>
+                <span class="barra"></span>
+                <span class="barra"></span>
+            </div>
+        </header>
+    <div class="login-container">
+        <h2>Login do Usuário</h2>
+        <form id="loginForm"></form>
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" name="usuario" required>
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>

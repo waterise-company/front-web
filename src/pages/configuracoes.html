@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Configurações</title>
+    <link rel="stylesheet" href="../css/estilo.css">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="container-config">
+        <h2>Configurações</h2>
+        <form>
+            <div class="container-config">
+            <label for="nome">Alterar nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome">
+            </div>
+
+            <div class="container-config">
+            <label for="cidade">Alterar cidade/estado:</label>
+            <input class=""type="text" id="cidade" name="cidade" placeholder="Cidade">
+            <input type="text" id="estado" name="cidade" placeholder="Estado">
+            </div>
+            
+            <div class="container-config">
+            <label for="senha">Alterar senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="Nova senha">
+            </div>
+            
+            <div class="container-config" id="botoes">
+                <button type="submit" >Salvar alterações</button>
+            </div>
+                <span id="msg-sucesso">
+                    Alteração realizada com sucesso!
+                </span>
+            </form>
+            <div class="container-config" id="botoes">
+        <button class="delete-btn" onclick="confirmDelete()">Excluir conta</button>
+            </div>
+        <div class="container-config" id="botoes">
+        <button onclick="window.location.href='index.html'">Voltar</button>
+            </div>
+
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>
