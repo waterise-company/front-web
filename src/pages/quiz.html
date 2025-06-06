@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <!-- CHAMANDO O CSS EXTERNO -->
+    <link rel="stylesheet" href="./src/css/estilo.css">
+    <title>Início</title>
 </head>
+
 <body>
-    
+    <header>
+        <a href="../../index.html" id="logo">
+          <img src="./src/assets/img/logo transparente.png" alt="Logo Waterise" />
+        </a>
+        <nav>
+          <ul class="header-menu">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="./src/pages/quiz.html">Quiz</a></li>
+            <li><a href="./src/pages/login.html">Login/Cadastro</a></li>
+            <li><a href="./src/pages/simulador.html">Simulador</a></li>
+          </ul>
+        </nav>
+          <div class="hamburguer">
+            <span class="barra"></span>
+            <span class="barra"></span>
+            <span class="barra"></span>
+          </div>
+    </header>
+
+    <div class="color-buttons">
+        <button onclick="mudarCor('branco')">Branco</button>
+        <button onclick="mudarCor('azul')">Azul</button>
+        <button onclick="mudarCor('cinza')">Cinza</button>
+    </div>
+
+    <div class="quiz-container">
+        <div id="start-container">
+            <h1 id="quiz-title">Quiz WATERISE: Enchentes</h1>
+            <button id="startBtn">Iniciar Quiz</button>
+        </div>
+
+        <form id="quizForm" style="display: none;"></form>
+        <div id="resultado"></div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 WATERISE. Todos os direitos reservados.</p>
+            <p>Email: contato@waterisecompany.com | Telefone: (11) 99999-9999</p>
+        </div>
+    </footer>
+
+
+    <!-- CHAMANDO O SCRIPT EXTERNO -->
+    <script src="./src/js/script.js"></script>
 </body>
+
 </html>
