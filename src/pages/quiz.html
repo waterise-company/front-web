@@ -91,8 +91,54 @@ const perguntas = [
       { texto: "Provavelmente esqueceria.", valor: 2 },
       { texto: "Nunca pensei nisso.", valor: 1 },
     ]
+  },
+  {
+    texto: "Você acompanha previsões de tempo e boletins de enchente?",
+    opcoes: [
+      { texto: "Sim, verifico diariamente.", valor: 4 },
+      { texto: "De vez em quando vejo algo.", valor: 3 },
+      { texto: "Só quando alguém me avisa.", valor: 2 },
+      { texto: "Nunca acompanho.", valor: 1 },
+    ]
+  },
+  {
+    texto: "Você saberia onde se abrigar se precisasse sair de casa?",
+    opcoes: [
+      { texto: "Sim, conheço os pontos seguros e abrigos.", valor: 4 },
+      { texto: "Tenho uma ideia, mas não certeza.", valor: 3 },
+      { texto: "Não sei exatamente onde ir.", valor: 2 },
+      { texto: "Nunca pensei nisso.", valor: 1 },
+    ]
+  },
+  {
+    texto: "Você sabe evitar áreas de risco durante enchentes?",
+    opcoes: [
+      { texto: "Sim, conheço os caminhos mais seguros.", valor: 4 },
+      { texto: "Evito algumas áreas, mas não todas.", valor: 3 },
+      { texto: "Ando por onde der na hora.", valor: 2 },
+      { texto: "Nunca pensei nisso.", valor: 1 },
+    ]
+  },
+  {
+    texto: "Você conversa com sua família sobre planos de emergência?",
+    opcoes: [
+      { texto: "Sim, já temos um plano combinado.", valor: 4 },
+      { texto: "Já falamos sobre isso, mas nada formal.", valor: 3 },
+      { texto: "Acho que cada um se viraria.", valor: 2 },
+      { texto: "Nunca conversamos sobre isso.", valor: 1 },
+    ]
+  },
+  {
+    texto: "Você saberia prestar primeiros socorros em uma emergência?",
+    opcoes: [
+      { texto: "Sim, fiz curso e me sinto preparado(a).", valor: 4 },
+      { texto: "Tenho noção básica.", valor: 3 },
+      { texto: "Sei pouca coisa.", valor: 2 },
+      { texto: "Não faço ideia do que fazer.", valor: 1 },
+    ]
   }
 ];
+
 
 const startBtn = document.getElementById('startBtn');
 const startContainer = document.getElementById('start-container');
@@ -160,15 +206,15 @@ function mostrarResultado() {
   let mensagem = '';
   let imagem = '';
 
-  if (score >= 18) {
-    mensagem = '🎉 Parabéns! Você está bem preparado(a) para situações de enchente. Continue se informando e ajudando a conscientizar outras pessoas.';
-    imagem = '<img src="../assets/img/preparado.png" alt="Preparado" style="max-width:100%; height:auto; margin-top:15px;">';
-  } else if (score >= 12) {
-    mensagem = '⚠️ Você tem algum conhecimento, mas ainda pode melhorar. A prevenção é essencial! Que tal revisar o plano de emergência da sua cidade?';
-    imagem = '<img src="../assets/img/parcial.png" alt="Precisa melhorar" style="max-width:100%; height:auto; margin-top:15px;">';
+  if (score >= 31) {
+    mensagem = '🎉 Parabéns! Você está muito bem preparado(a) para situações de enchente. Continue sendo um exemplo de conscientização e prevenção!';
+    imagem = '<img src="/src/assets/img/bom.jpg" alt="Preparado" style="max-width:100%; height:auto; margin-top:15px;">';
+  } else if (score >= 21) {
+    mensagem = '⚠️ Você está razoavelmente preparado(a), mas ainda há espaço para melhorar. Aprender mais sobre planos de emergência pode fazer a diferença!';
+    imagem = '<img src="/src/assets/img/maisoumenos.jpg" alt="Precisa melhorar" style="max-width:100%; height:auto; margin-top:15px;">';
   } else {
-    mensagem = '🚨 Atenção! Seu nível de preparo para enchentes é baixo. Busque informações e esteja pronto para agir em caso de emergência.';
-    imagem = '<img src="../assets/img/alerta.png" alt="Baixa preparação" style="max-width:100%; height:auto; margin-top:15px;">';
+    mensagem = '🚨 Atenção! Seu nível de preparo para enchentes é baixo. Busque informações, converse com sua família e esteja pronto para agir em emergências.';
+    imagem = '<img src="/src/assets/img/ruim.jpg" alt="Baixa preparação" style="max-width:100%; height:auto; margin-top:15px;">';
   }
 
   resultadoDiv.innerHTML = mensagem + imagem;

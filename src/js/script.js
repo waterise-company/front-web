@@ -69,3 +69,38 @@ headerMenu.addEventListener('click',(e)=>{
         toggleMenu();
     }
 })
+
+//BOTÕES
+const botoes = document.querySelector('.color-buttons');
+const logo = document.getElementById('logo');
+
+let ultimoScroll = 0;
+let esconderAnimado = false;
+
+window.addEventListener('scroll', () => {
+  const scrollAtual = window.scrollY;
+  const alturaJanela = window.innerHeight;
+  const limite = alturaJanela * 0.9
+  const logoRect = logo.getBoundingClientRect();
+
+  if (scrollAtual > limite && scrollAtual > ultimoScroll) {
+    const distanciaParaEsconder = Math.min(logoRect.bottom + 10, 60); 
+
+    botoes.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+    botoes.style.transform = `translateY(-${distanciaParaEsconder}px)`;
+    botoes.style.opacity = '0';
+    botoes.style.pointerEvents = 'none';
+
+    esconderAnimado = true;
+  } else if (scrollAtual < limite && scrollAtual < ultimoScroll) {
+    botoes.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+    botoes.style.transform = 'translateY(0)';
+    botoes.style.opacity = '1';
+    botoes.style.pointerEvents = 'auto';
+
+    esconderAnimado = false;
+  }
+
+  ultimoScroll = scrollAtual;
+});
+
