@@ -13,26 +13,6 @@
     <header>
         <div id="indicador-pagina" style="position: fixed; top: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 8px 12px; border-radius: 5px; font-weight: bold; z-index: 9999;">
 </div>
-
-<script>
-  const indicador = document.getElementById('indicador-pagina');
-  const url = window.location.pathname;
-
-  let nomePagina = '';
-
-  if (url.includes('/index.html') || url === '/' || url === '') {
-    nomePagina = 'Home';
-  } else if (url.includes('/quiz.html')) {
-    nomePagina = 'Quiz';
-  } else if (url.includes('/login.html') || url.includes('/cadastro.html')) {
-    nomePagina = 'Login/Cadastro';
-  } else if (url.includes('/simulador.html')) {
-    nomePagina = 'Simulador';
-  }
-
-  indicador.textContent = nomePagina;
-</script>
-
         <a href="../../index.html" id="logo">
           <img src="/src/assets/img/logo transparente.png" alt="Logo Waterise" />
         </a>
@@ -254,6 +234,27 @@ function mostrarResultado() {
 
     <!-- CHAMANDO O SCRIPT EXTERNO -->
     <script src="/src/js/script.js"></script>
+
+<script>
+  const indicador = document.getElementById('indicador-pagina');
+  const url = window.location.pathname;
+
+  let nomePagina = '';
+
+  if (url.includes('/index.html') || url === '/' || url === '') {
+    nomePagina = 'Home';
+  } else if (url.includes('/quiz.html')) {
+    nomePagina = 'Quiz';
+  } else if (url.includes('/login.html') || url.includes('/cadastro.html')) {
+    nomePagina = 'Login';
+  } else if (url.includes('/simulador.html')) {
+    nomePagina = 'Simulador';
+  }else if (url.includes('/cadastrar.html')) {
+    nomePagina = 'Cadastro';
+  }
+
+  indicador.textContent = nomePagina;
+</script>
 </body>
 
 </html>

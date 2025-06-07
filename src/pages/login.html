@@ -7,35 +7,81 @@
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
-     <header>
-            <a href="../../index.html" id="logo">
-                <img src="../assets/img/logo_transparente.png" alt="Logo Waterise"/>
-            </a>
-            <nav>
-                <ul class="header-menu">
-                    <li><a href="../../index.html">Home</a></li>
-                    <li><a href="./cadastrar.html">Cadastrar-se</a></li>
-                    <li><a href="./simulador.html">Simulação</a></li>
-                </ul>
-            </nav>
-            <div class="hamburguer">
-                <span class="barra"></span>
-                <span class="barra"></span>
-                <span class="barra"></span>
-            </div>
-        </header>
+    <header>
+         <div id="indicador-pagina" style="position: fixed; top: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 8px 12px; border-radius: 5px; font-weight: bold; z-index: 9999;">
+</div>
+        <a href="../../index.html" id="logo">
+            <img src="../assets/img/logo_transparente.png" alt="Logo Waterise"/>
+        </a>
+        <nav>
+            <ul class="header-menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="./quiz.html">Quiz</a></li>
+                <li><a href="./cadastrar.html">Cadastrar-se</a></li>
+                <li><a href="./simulador.html">Simulador</a></li>
+            </ul>
+        </nav>
+        <div class="hamburguer">
+            <span class="barra"></span>
+            <span class="barra"></span>
+            <span class="barra"></span>
+        </div>
+    </header>
+
     <div class="login-container">
         <h2>Login do Usuário</h2>
-        <form id="loginForm"></form>
+        <form id="loginForm">
             <label for="usuario">Usuário</label>
             <input type="text" id="usuario" name="usuario" required>
 
             <label for="senha">Senha</label>
             <input type="password" id="senha" name="senha" required>
 
-            <button type="submit" href="./home_usuario.html">Entrar</button>
+            <button type="submit">Entrar</button>
         </form>
     </div>
+
     <script src="../js/script.js"></script>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        if (loginForm) {
+            loginForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const usuario = document.getElementById('usuario').value.trim();
+                const senha = document.getElementById('senha').value.trim();
+
+                if (usuario && senha) {
+                    // Aqui você pode validar usuário/senha se quiser
+                    window.location.href = './home_usuario.html';
+                } else {
+                    alert('Por favor, preencha todos os campos.');
+                }
+            });
+        }
+    </script>
+
+<script>
+  const indicador = document.getElementById('indicador-pagina');
+  const url = window.location.pathname;
+
+  let nomePagina = '';
+
+  if (url.includes('/index.html') || url === '/' || url === '') {
+    nomePagina = 'Home';
+  } else if (url.includes('/quiz.html')) {
+    nomePagina = 'Quiz';
+  } else if (url.includes('/login.html') || url.includes('/cadastro.html')) {
+    nomePagina = 'Login';
+  } else if (url.includes('/simulador.html')) {
+    nomePagina = 'Simulador';
+  }else if (url.includes('/cadastrar.html')) {
+    nomePagina = 'Cadastro';
+  }
+
+  indicador.textContent = nomePagina;
+</script>
+
 </body>
 </html>

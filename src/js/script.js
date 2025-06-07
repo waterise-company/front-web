@@ -6,7 +6,6 @@ console.log("Script carregado!");
 let imagens = [
   "src/assets/img/enchente horizontal 4.jpg",
   "src/assets/img/cachorro enchente horizontal.jpg",
-  "src/assets/img/enchente horizontal 3.jpg",
   "src/assets/img/enchente horizontal 2.jpg"
 ];
 
