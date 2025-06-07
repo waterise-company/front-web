@@ -160,60 +160,15 @@ if (cadastroForm) {
   });
 }
 
-// ===============================
-// LOGIN
-// ===============================
-document.addEventListener('DOMContentLoaded', function () {
-  const loginForm = document.getElementById('loginForm');
-  if (!loginForm) return;
-
-  loginForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
     const usuario = document.getElementById('usuario').value.trim();
     const senha = document.getElementById('senha').value.trim();
 
     let msg = document.getElementById('login-msg');
     if (msg) msg.remove();
 
-    if (!usuario || !senha) {
-      mostrarMensagem('Preencha todos os campos.');
-      return;
-    }
-
-    const usuariosCadastrados = [
-      { email: 'teste@email.com', senha: '123456' },
-      { email: 'usuario@exemplo.com', senha: 'senha123' }
-    ];
-
-    const usuarioValido = usuariosCadastrados.find(u => u.email === usuario && u.senha === senha);
-
-    const usuarioLocalStorage = JSON.parse(localStorage.getItem('usuario'));
-
-    const loginValido =
-      usuarioValido ||
-      (usuario === 'admin' && senha === '1234') ||
-      (usuarioLocalStorage &&
-        usuario === usuarioLocalStorage.email &&
-        senha === usuarioLocalStorage.senha);
-
-    if (loginValido) {
-      mostrarMensagem('Login realizado com sucesso!', true);
-      setTimeout(() => {
-        window.location.href = 'home_usuario.html';
-      }, 1000);
-    } else {
-      mostrarMensagem('Usuário ou senha inválidos.');
-    }
-
-    function mostrarMensagem(texto, sucesso = false) {
-      const div = document.createElement('div');
-      div.id = 'login-msg';
-      div.textContent = texto;
-      div.style.color = sucesso ? 'green' : 'red';
-      loginForm.parentNode.insertBefore(div, loginForm);
-    }
-  });
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    window.location.href = './home_usuario.html'; // Altere para o caminho desejado
 });
 
 document.body.classList.add('home-usuario');

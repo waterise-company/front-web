@@ -141,7 +141,9 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: blue
+    color: blue;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 header h1{
     color:#333;
