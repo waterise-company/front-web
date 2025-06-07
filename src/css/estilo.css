@@ -856,3 +856,110 @@ ul {
     margin-top: 2rem;
     border-top: 1px solid #cfd8dc;
 }
+
+
+/* simulador.css */
+
+.header-simulador {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+.header-simu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.header-menu li a:hover {
+    color: #e0e0e0;
+}
+
+.hamburguer {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.barra {
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+.container-simulador {
+    background: #fff;
+    max-width: 420px;
+    margin: 48px auto 0 auto;
+    padding: 32px 28px 36px 28px;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(30,144,255,0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-simulador h1 {
+    color: #1e90ff;
+    margin-bottom: 28px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+label[for="nivel"] {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type="range"] {
+    width: 260px;
+    margin: 18px 0 8px 0;
+    accent-color: #1e90ff;
+    height: 4px;
+    background: #e6f0fa;
+    border-radius: 4px;
+}
+
+.slider-value {
+    font-size: 1.2rem;
+    color: #1e90ff;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.status {
+    padding: 10px 28px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+.status.ok {
+    background: #e6f9e6;
+    color: #2e8b57;
+    border: 1px solid #b6e6b6;
+}
+
+.status.alerta {
+    background: #fffbe6;
+    color: #bfa100;
+    border: 1px solid #ffe58f;
+}
+
+.status.perigo {
+    background: #ffeaea;
+    color: #d32f2f;
+    border: 1px solid #ffb3b3;
+}
